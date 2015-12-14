@@ -1,0 +1,5 @@
+pig -x local TopReviewers.pig
+
+pig -x local -f CleanData.pig -param clusters=1 -param review_file='/home/suresh/Desktop/AmazonReviews/data/reviews_Electronics.json.gz2' -param meta_file='/home/suresh/Desktop/AmazonReviews/data/meta_Electronics.json1' -param output_dir=/home/suresh/Desktop/AmazonReviews/data/op/cleanData1
+
+pig -f script.pig -param clusters=1 -param review_file='s3://big-data-amazon-reviews/data/test_data/reviews_Electronics.json.gz2' -param meta_file='s3://big-data-amazon-reviews/data/test_data/meta_Electronics.json' -param output_dir=s3://big-data-amazon-reviews/data/test_output/top_reviewers/clean_data1/
